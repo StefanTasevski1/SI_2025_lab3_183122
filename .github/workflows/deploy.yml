@@ -14,4 +14,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./C:/Users/User\Desktop/SI_2025_lab3_183122/.github/workflows 
+          publish_dir: ./public 
