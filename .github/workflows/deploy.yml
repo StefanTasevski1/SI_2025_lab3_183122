@@ -1,21 +1,18 @@
+name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
       - master
-      - feature
-  pull_request:
-    branches:
-      - master
-      - feature
- 
+
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World"
-
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: .
+      - uses: actions/checkout@v4
+      # Add any build steps here if needed
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
